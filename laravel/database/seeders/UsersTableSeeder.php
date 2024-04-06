@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Admin',
                 'username' => 'admin',
-                'email' => 'kanyaegbu@realestate',
+                'email' => 'kanyaegbu@realestate.com',
                 'password' => Hash::make('NoCateX@1990'),
                 'role' => 'admin',
                 'status' =>'active',
@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Agent',
                 'username' => 'agent',
-                'email' => 'agent@realestate',
+                'email' => 'agent@realestate.com',
                 'password' => Hash::make('NoCateX@1990'),
                 'role' => 'agent',
                 'status' => 'active',
@@ -37,7 +37,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'User',
                 'username' => 'user',
-                'email' => 'kanyuseraegbu@realestate',
+                'email' => 'kanyuseraegbu@realestate.com',
                 'password' => Hash::make('NoCateX@1990'),
                 'role' => 'user',
                 'status' => 'active',
