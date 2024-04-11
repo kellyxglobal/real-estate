@@ -12,6 +12,7 @@ class AdminController extends Controller
         return view('admin.index');
     } //End Method
 
+
     public function AdminLogout(Request $request){
             Auth::guard('web')->logout();
 
@@ -19,13 +20,13 @@ class AdminController extends Controller
 
             $request->session()->regenerateToken();
 
-            return redirect('admin/admin_login');
-        }
+            return redirect('/admin/login');
+        }// End Method
 
-    public function AdminLogin()
-    {
-        return view('admin.admin_login');
-    } // End Method
+
+    public function AdminLogin(){
+            return view('admin.admin_login');
+        } // End Method
 
     public function AdminProfile(){
 

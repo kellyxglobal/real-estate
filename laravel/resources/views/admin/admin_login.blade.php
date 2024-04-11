@@ -64,18 +64,24 @@
                     <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
 
 
-     <form class="forms-sample" method="post" action="{{ route('login') }}">
+     <form class="forms-sample" method="POST" action="{{ route('login') }}">
        @csrf
 
                       <div class="mb-3">
   <label for="login" class="form-label">Email/Name/Phone </label>
                         <input type="text" name="login" class="form-control" id="login" placeholder="Email">
+						@error('login')
+           				 <span class="text-danger">{{ $message }}</span>
+        				@enderror
                       </div>
 
                       <div class="mb-3">
                         <label for="userPassword" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password" autocomplete="current-password" placeholder="Password">
-                      </div>
+						@error('password')
+            				<span class="text-danger">{{ $message }}</span>
+        				@enderror
+					</div>
                       <div class="form-check mb-3">
                         <input type="checkbox" class="form-check-input" id="authCheck">
                         <label class="form-check-label" for="authCheck">
