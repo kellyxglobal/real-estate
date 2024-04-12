@@ -3,7 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use App\http\Controllers\AgentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +18,12 @@ use App\http\Controllers\AgentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// User Frontend All Route 
+Route::get('/', [UserController::class, 'Index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
