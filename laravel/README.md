@@ -57,3 +57,11 @@ Similar to the admin section, I built a user dashboard with profile editing capa
 ## Frontend Theme Integration & Customization
 
 I integrated a pre-built frontend theme into the project to enhance the user interface. This involved incorporating the theme's assets (CSS, JavaScript) and customizing specific frontend pages like login, registration, and user dashboard. I utilized Blade templating to dynamically inject content and ensure proper asset loading.
+
+## Conditional Login/Logout Button Display
+
+I implemented a dynamic login/logout button within the application's header section. By leveraging Laravel's @auth directive, the button text and functionality change based on the user's authentication status. When a user is logged in, the button displays "Logout" and redirects to the logout functionality upon clicking. Conversely, for unauthenticated users, the button displays "Sign In" and redirects to the login page.
+
+## User Login & Logout Notification
+
+I incorporated user login and logout notifications to enhance the user experience. I modified the UserAuthenticatedController.php file to trigger notifications upon successful login and logout events, providing feedback to the user regarding their authentication status.
