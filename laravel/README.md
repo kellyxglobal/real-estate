@@ -25,17 +25,18 @@ My detailed explanation showcases a clear understanding of the steps involved in
 I established the development environment by installing the necessary software: Laravel framework using Composer, XAMPP server for local development, and Node.js for managing JavaScript dependencies.
 
 
-## Laravel Sponsors
+## Database Design Seeding & Factory
 
-Real Estate
+I designed the database schema using Laravel migrations to create tables for users, including attributes like name, email, password, and a dedicated field named role to represent user types (admin, agent, user). Additionally, I utilized Laravel seeders to populate the user table with initial sample data and factory to populate the user table with multiple fake data for testing purposes.
 
-### Premium Partners
+### Implementing Multi-User Authentication with Breeze
 
-- **[Vehikl](https://vehikl.com/)**
+I leveraged Laravel Breeze, a pre-built package, to establish a robust user authentication system. However, I customized Breeze's default behavior to accommodate my project's specific needs. By introducing logic within the AuthenticatedSessionController.php file, I ensured users are redirected to appropriate dashboards (admin, agent, or user) based on their designated roles upon successful login.
 
-## Contributing
 
-Realestate
+## Authorization with Laravel MiddleWare
+
+To enforce authorization and control access to specific routes, I created custom middleware using the Laravel Artisan command (php artisan make:middleware Role). This middleware intercepts requests and verifies if a user's role aligns with the intended route's access restrictions. If a mismatch occurs, the user is redirected to the default user dashboard.
 
 ## Code of Conduct
 
