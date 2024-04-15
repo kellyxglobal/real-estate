@@ -38,14 +38,22 @@ I leveraged Laravel Breeze, a pre-built package, to establish a robust user auth
 
 To enforce authorization and control access to specific routes, I created custom middleware using the Laravel Artisan command (php artisan make:middleware Role). This middleware intercepts requests and verifies if a user's role aligns with the intended route's access restrictions. If a mismatch occurs, the user is redirected to the default user dashboard.
 
-## Code of Conduct
+## Blade Templating for Dynamic Views
 
-RealEstate
+I employed Laravel's Blade templating engine to construct dynamic web pages. Blade templates provide a clean way to separate application logic from presentation and allow for code reusability. I utilized concepts like inheritance and sections within Blade templates to create a consistent layout for the application's various views (admin dashboard, user dashboard, etc.).
 
-## Security Vulnerabilities
+## Developing The Admin Dashboard
 
-RealEstate
+I constructed a dedicated admin dashboard with distinct components like header, sidebar, and footer. Each component was created as a separate Blade template file (header.blade.php, sidebar.blade.php, footer.blade.php) for better organization and maintainability. I then integrated these components into the main admin dashboard template using Blade's include directive.
 
-## License
+## Admin Profile Management & Updation
 
-RealEstate
+I implemented functionalities for admin profile management, allowing admins to view and update their profile information (name, email, profile picture). This involved creating a specific route for accessing the admin profile page and crafting a dedicated controller method to retrieve the authenticated admin's user data. I utilized Blade templating to display the retrieved data within the profile view and incorporated forms to facilitate user data updates.
+
+## User Dashboard & Profile Management
+
+Similar to the admin section, I built a user dashboard with profile editing capabilities. The user dashboard utilizes Blade templates and retrieves user data for display. Forms are included within the user profile view to allow users to modify their information, mimicking the functionalities implemented for the admin profile section.
+
+## Frontend Theme Integration & Customization
+
+I integrated a pre-built frontend theme into the project to enhance the user interface. This involved incorporating the theme's assets (CSS, JavaScript) and customizing specific frontend pages like login, registration, and user dashboard. I utilized Blade templating to dynamically inject content and ensure proper asset loading.
