@@ -65,3 +65,8 @@ I implemented a dynamic login/logout button within the application's header sect
 ## User Login & Logout Notification
 
 I incorporated user login and logout notifications to enhance the user experience. I modified the UserAuthenticatedController.php file to trigger notifications upon successful login and logout events, providing feedback to the user regarding their authentication status.
+
+## Setting Up Property type 
+
+
+## Adding A Property type
