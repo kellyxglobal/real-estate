@@ -7,13 +7,13 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## EXELLENT BREAKDOWN OF MY LARAVEL REALESTATE PROJECT
+# BREAKDOWN OF MY REALESTATE BACKEND PROJECT DEVELOPED WITH LARAVEL
 
 I wish to provide a comprehensive walkthrough of my real estate project's development.  This breakdown can serve as a valuable resource for anyone building a similar multi-user authentication system and other RealEstate features with PHP, MySQL and Laravel.
 
 My detailed explanation showcases a clear understanding of the steps involved in building a multi-user authentication system with Laravel and Blade templating for this project. Here are some additional points and insights based on my breakdown:
 
-# Strengths:
+## Strengths:
 
 - [Clear Structure]: I've presented the steps in a logical sequence, making it easy to follow my development process.
 - [Detailed Explanations]: I've provided explanations for each step, including the code snippets and functionalities achieved.
@@ -66,12 +66,8 @@ I implemented a dynamic login/logout button within the application's header sect
 
 I incorporated user login and logout notifications to enhance the user experience. I modified the UserAuthenticatedController.php file to trigger notifications upon successful login and logout events, providing feedback to the user regarding their authentication status.
 
-## Setting Up Property type 
 
-
-## Adding A Property type
-
-### Professional Breakdown of Property Type Feature in Admin Panel
+# Professional Breakdown of Property Type Feature in Admin Panel
 
 In real estate, the term "property type" refers to the category or classification of a piece of real property based on its characteristics, purpose, and usage. Property types can vary widely and may include residential, commercial, industrial, agricultural, or vacant land, among others. Each property type has its own set of features, potential uses, and market dynamics, which can influence factors such as valuation, investment potential, and regulatory considerations.
 
@@ -110,7 +106,7 @@ This section details the development of a property type management system within
 3) Edit Type View: The edit_type.blade.php view was created to display a form pre-populated with the existing data of the chosen property type (fetched using the ID from the route). The form action attribute was set to the UpdateType route for processing updates.
 
 
-### Implementing Amenities Feature:
+# Implementing Amenities Feature:
 
 The development process for the amenities feature mirrors the steps outlined in section 33 for property types. It likely involves creating a separate Amenity model with its migration, controller, routes, views, and potentially linking it to the PropertyType model for establishing relationships between property types and their associated amenities.
 
