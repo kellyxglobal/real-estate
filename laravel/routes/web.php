@@ -6,6 +6,7 @@ use App\http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\http\Controllers\AgentController;
 use App\http\Controllers\Backend\PropertyTypeController;
+use App\http\Controllers\Backend\PropertyController;
 
 
 
@@ -79,6 +80,14 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
         Route::get('/delete/type/{id}', 'DeleteType')->name('delete.type'); 
         Route::get('/delete/amenity/{id}', 'DeleteAmenity')->name('delete.amenity'); 
    
+   }); //Method Ends
+
+   // Property All Route 
+   Route::controller(PropertyController::class)->group(function(){
+   
+    Route::get('/all/properties', 'AllProperties')->name('all.properties'); 
+    Route::get('/add/property', 'AddProperty')->name('add.property'); 
+
    });
    
    
