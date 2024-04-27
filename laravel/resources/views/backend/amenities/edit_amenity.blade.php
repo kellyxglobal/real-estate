@@ -15,18 +15,18 @@
              <div class="card">
               <div class="card-body">
 
-			<h6 class="card-title">Add Amenities   </h6>
+			<h6 class="card-title">Edit Amenity   </h6>
 
-			<form id="myForm" method="POST" action="{{ route('store.amenity') }}" class="forms-sample">
+			<form id="myForm" method="POST" action="{{ route('update.amenity') }}" class="forms-sample">
 				@csrf
+                <input type="hidden" name="id" class="form-control" value="{{ $amenities->id }}" >
 
-        <input type="hidden" name="id" value="{{ $amenities->id }}">
-				<div class="form-group mb-3">
- <label for="exampleInputEmail1" class="form-label">Amenities Name   </label>
- <input type="text" name="amenities_name" class="form-control" value="{{ $amenities->amenities_name }}" >
+
+				<div class="mb-3">
+ <label for="exampleInputEmail1" class="form-label">Amenity Name   </label>
+					 <input type="text" name="amenities_name" class="form-control" value="{{ $amenities->amenities_name }}" >
+          
 				</div>
-
-
 
 	 <button type="submit" class="btn btn-primary me-2">Save Changes </button>
 
@@ -48,7 +48,7 @@
 
 			</div>
 
-      <script type="text/javascript">
+            <script type="text/javascript">
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {

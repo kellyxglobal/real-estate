@@ -70,10 +70,14 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
         Route::get('/add/type', 'AddType')->name('add.type');
         Route::get('/all/amenities', 'AllAmenities')->name('all.amenities'); 
         Route::get('/add/amenity', 'AddAmenity')->name('add.amenity');
+        Route::post('/store/amenity', 'StoreAmenity')->name('store.amenity');
         Route::post('/store/type', 'StoreType')->name('store.type');  
         Route::get('/edit/type/{id}', 'EditType')->name('edit.type');
+        Route::get('/edit/amenity/{id}', 'EditAmenity')->name('edit.amenity');
         Route::post('/update/type', 'UpdateType')->name('update.type');
-     Route::get('/delete/type/{id}', 'DeleteType')->name('delete.type'); 
+        Route::post('/update/amenity', 'UpdateAmenity')->name('update.amenity');
+        Route::get('/delete/type/{id}', 'DeleteType')->name('delete.type'); 
+        Route::get('/delete/amenity/{id}', 'DeleteAmenity')->name('delete.amenity'); 
    
    });
    

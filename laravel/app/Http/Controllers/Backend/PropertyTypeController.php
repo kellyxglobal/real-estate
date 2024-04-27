@@ -100,6 +100,67 @@ class PropertyTypeController extends Controller
 
 
 
+    public function StoreAmenity(Request $request){
+
+        Amenities::insert([
+            'amenities_name' => $request->amenities_name,
+            
+        ]);
+
+        $notification = array(
+            'message' => 'Amenity name Created Succesfully!',
+            'alert-type' => 'error'
+        );
+        return redirect()->route('all.amenities')->with($notification);
+
+    } // End Method 
+
+
+    public function EditAmenity($id){
+
+        $amenities = Amenities::findOrFail($id);
+        return view('backend.amenities.edit_amenity',compact('amenities'));
+
+    }// End Method 
+
+
+
+    public function UpdateAmenity(Request $request){
+
+        $amenityid = $request->id;
+
+        Amenities::findOrFail($amenityid)->update([ 
+
+            'amenities_name' => $request->amenities_name, 
+        ]);
+
+          $notification = array(
+            'message' => 'Amenity Name Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.amenities')->with($notification);
+
+    }// End Method 
+
+
+    public function DeleteAmenity($id){
+
+        Amenities::findOrFail($id)->delete();
+
+         $notification = array(
+            'message' => 'Amenity Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    }// End Method
+
+     
+
+
+
 
 
 }

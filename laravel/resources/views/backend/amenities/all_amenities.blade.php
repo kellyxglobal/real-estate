@@ -29,10 +29,10 @@
                    @foreach($amenities as $key => $item)
                       <tr>
                         <td>{{ $key+1 }}</td>
-                        <td>{{ $item->amenitis_name }}</td> 
+                        <td>{{ $item->amenities_name }}</td> 
                         <td>
-       <a href="{{ route('edit.type',$item->id) }}" class="btn btn-inverse-warning"> Edit </a>
-       <a href="{{ route('delete.type',$item->id) }}" class="btn btn-inverse-danger" id="delete"> Delete  </a>
+       <a href="{{ route('edit.amenity',$item->id) }}" class="btn btn-inverse-warning"> Edit </a>
+       <a href="{{ route('delete.amenity',$item->id) }}" class="btn btn-inverse-danger" id="delete"> Delete  </a>
                         </td> 
                       </tr>
                      @endforeach
