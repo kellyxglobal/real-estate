@@ -19,11 +19,14 @@
 
 			<form id="myForm" method="POST" action="{{ route('store.amenity') }}" class="forms-sample">
 				@csrf
-
-        <input type="hidden" name="id" value="{{ $amenities->id }}">
+                
+        <input type="hidden" name="id" value="">
+               
 				<div class="form-group mb-3">
  <label for="exampleInputEmail1" class="form-label">Amenities Name   </label>
- <input type="text" name="amenities_name" class="form-control" value="{{ $amenities->amenities_name }}" >
+ 
+ <input type="text" name="amenities_name" class="form-control" value="" >
+
 				</div>
 
 

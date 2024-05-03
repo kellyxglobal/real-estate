@@ -28,7 +28,5 @@ class PropertyController extends Controller
         $activeAgent = User::where('status','active')->where('role','agent')->latest()->get();
         return view('backend.property.add_property',compact('propertytype','amenities','activeAgent'));
 
-        return view('backend.property.add_property');
-
     } // End Method 
 }
