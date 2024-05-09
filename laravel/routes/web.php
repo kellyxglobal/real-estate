@@ -87,6 +87,7 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
    
     Route::get('/all/properties', 'AllProperties')->name('all.properties'); 
     Route::get('/add/property', 'AddProperty')->name('add.property'); 
+    Route::post('/store/property', 'StoreProperty')->name('store.property');
 
    });
    
