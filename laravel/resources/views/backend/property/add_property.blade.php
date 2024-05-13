@@ -226,7 +226,7 @@
                 <textarea name="short_descp" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 
             </div>
-        </div><!-- Col -->
+    </div><!-- Col -->
 
 
 
