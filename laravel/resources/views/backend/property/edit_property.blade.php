@@ -184,7 +184,7 @@
      <select name="amenities_id[]" class="js-example-basic-multiple form-select" multiple="multiple" data-width="100%">
 
                  @foreach($amenities as $ameni)
-                 <option value="{{ $ameni->id }}" {{ (in_array($ameni->id,$property_ami)) ? 'selected' : '' }} >{{ $ameni->amenitis_name }}</option>
+                 <option value="{{ $ameni->id }}" {{ (in_array($ameni->id,$property_ami)) ? 'selected' : '' }} >{{ $ameni->amenities_name }}</option>
                @endforeach
 
             </select>
@@ -242,7 +242,7 @@
 
 
          <div class="form-check form-check-inline">
-<input type="checkbox" name="hot" value="1" class="form-check-input" id="checkInline">
+         <input type="checkbox" name="hot" value="1" class="form-check-input" id="checkInline" {{ $property->hot == '1' ? 'checked' : '' }}>
                 <label class="form-check-label" for="checkInline">
                     Hot Property 
                 </label>
