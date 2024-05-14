@@ -375,7 +375,7 @@
     <td>
 <input type="submit" class="btn btn-primary px-4" value="Update Image" >
 
-<a href="" class="btn btn-danger" id="delete">Delete </a>
+<a href="{{ route('property.multiimg.delete',$img->id) }}" class="btn btn-danger" id="delete">Delete </a>
     </td>
 </tr>
 @endforeach
@@ -385,6 +385,10 @@
 </div>
 
     </form> 
+
+
+
+    
 </div>
   </div>
 
