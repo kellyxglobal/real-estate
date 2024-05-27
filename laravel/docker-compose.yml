@@ -21,7 +21,7 @@ services:
         ports:
             - 8000:8000
         depends_on:
-            - localhost
+            - mysql
             #- redis
         networks:
             - my-app-network
@@ -46,17 +46,34 @@ services:
             #- redis
 
     # Database Server
-    localhost:
+    mysql:
         image: mysql:8.0
         ports: 
             - 3306:3306
         environment:
+            #- MYSQL_CONNECTION=${DB_CONNECTION}
+            #- MYSQL_HOST=${DB_HOST}
             - MYSQL_DATABASE=${DB_DATABASE}
             - MYSQL_USER=${DB_USERNAME}
             - MYSQL_PASSWORD=${DB_PASSWORD}
             - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
         volumes:
+            #- db-data:/var/www/database/seeds
             - db-data:/var/lib/mysql
+        networks:
+            - my-app-network
+
+    # PHPMYADMIN Server
+    phpmyadmin:
+        image: phpmyadmin:latest
+        ports: 
+            - 80:80
+        depends_on:
+            - mysql
+        environment:
+            #-PMA_HOST: mysql
+            #-PMA_USER: root
+            - PMA_ARBITRARY=1
         networks:
             - my-app-network
 
@@ -92,4 +109,5 @@ services:
            
 
 volumes:
+    #./database/seeds: ~
     db-data: ~

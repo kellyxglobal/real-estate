@@ -1,4 +1,4 @@
- FROM php:8.1 as php
+ FROM php:8.2 as php
 
  #Installing MYSQL
  RUN apt-get update -y
@@ -23,7 +23,8 @@ ENTRYPOINT [ "docker/entrypoint.sh" ]
 # ===================================================
 # Node
 FROM node:14-alpine as node
-WORKDIR /var/wwwCOPY . .
+WORKDIR /var/www
+COPY . .
 
 RUN npm install --global cross-env
 RUN npm install
