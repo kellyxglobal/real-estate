@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\http\Controllers\AgentController;
 use App\http\Controllers\Backend\PropertyTypeController;
 use App\http\Controllers\Backend\PropertyController;
+use App\Http\Middleware\RedirectIfAuthenticated;
 
 
 
@@ -57,7 +58,7 @@ Route::middleware(['auth','role:agent'])->group(function(){
     Route::get('/agent/dashboard', [AgentController::class, 'AgentDashboard'])->name('agent.dashboard');
 });
 
-Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login')->middleware(RedirectIfAuthenticated::class); 
 
 
  /// Admin Group Middleware 
