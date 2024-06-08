@@ -224,3 +224,81 @@ This section explains the implementation of a separate form for updating the pro
 A separate form is created on the edit_property page to handle thumbnail updates.
 - Route and Function:
 A specific route is defined for the form submission, and a controller function is implemented to handle the update logic for the submitted image file in the database.
+
+
+## Advanced Image Management:
+
+These sections detail functionalities related to managing multiple property images, including updating, deleting, and adding new images within the edit/update form.
+
+- Setting Up and Updating Property Multi-Images
+- Deleting Multi-Images from Edit/Update Form
+- Adding New Images for Deleted Images
+- Managing Property Update Facility
+- Deleting Property and Removing Associated Images
+
+
+
+## Property Details Page
+
+This section details the creation of a dedicated page displaying detailed property information.
+
+
+## Dockerizing the RealEstate Docker Application:
+Docker is a game-changer for developers. It takes the hassle out of deploying applications by packaging them into standardized containers. These containers are lightweight and portable, ensuring your app runs smoothly on any machine with Docker.
+
+Here, I'll walk you through the steps I took to Dockerize my Laravel real estate application. By following these steps, you can achieve the same benefits:
+
+- Simplified Deployment: No more manual server configuration headaches! Docker guarantees consistent behavior across development, testing, and production environments.
+- Reproducibility: My application runs identically on any machine with Docker, regardless of the underlying system.
+- Isolation: Each container runs in its own world, preventing conflicts with other applications or dependencies on the host machine.
+
+## Setting Up My Docker Environment (Windows Users):
+
+First things first, I was on Windows, we needed to get Docker up and running. Here's what I did:
+
+- Download and Install: Grab the Windows Subsystem for Linux (WSL)/Docker Desktop and install it on my machine. Then, on top of WSL, I installed Docker Desktop for Windows.
+
+- Verify the Installation: Launch Docker Desktop and start the Docker Engine. Open a terminal window and type docker ps. If you see a list of containers, Docker is ready to roll!
+
+
+## Creating the Docker Configuration Files:
+
+I created the magic that tells Docker how to build and run my application by creating some files in my project's root directory:
+
+1) Creating Directories and Files: I made a new directory named docker inside my project. Within this directory, I created the following files:
+
+- docker-compose.yml: This file is the heart of my Docker setup. It defines the services (containers) needed for my application and their configurations.
+
+- Dockerfile (Optional): This file specifies instructions for building a custom Docker image for my application (I'll cover this in a bit).
+
+- entrypoint.sh (Optional): This file defines commands that run when the container starts (useful for custom application setups).
+
+2) docker-compose.yml: I Opened this file and specified the version of docker-compose I'm using. Next, defined services for:
+- PHP application server
+- Database server (e.g., MySQL)
+- Optional: PhpMyAdmin server (for managing my database)
+
+3) Configure Each Service: For each service, I needed to provide details like:
+
+- Image: Specified a pre-built Docker image (e.g., php:8.1-fpm for PHP).
+- Ports: Mapped container ports to host machine ports for accessibility (e.g., container port 80 to host port 8080).
+- Environment: Defined environment variables needed by my application (e.g., database connection details).
+- Volumes: Configured volumes to persist data between container restarts (e.g., map my application code directory to a volume).
+
+
+## Building and Running the Docker Containers:
+
+1) Build Images (Optional): Since I am using a custom Dockerfile, ran 'docker-compose --build' to build Docker images for my application and services.
+
+2) Start the Containers! Run 'docker-compose up -d' to start all defined services in the background. This downloaded any pre-built images and created and ran the containers.
+
+
+## Verifying Connectivity:
+
+I also encounter some issues while the containers were up. I had to investigate the issue by verifying the conectivities to make sure everything is talking to each other:
+
+- Inspect Container IP: I used the command 'docker container inspect <container_name>' to retrieve details about a specific container, including its IP address.
+- Test Network Connectivity: Used the ping command with the container's IP address to see if the container is reachable from my host machine.
+- Verify Network Between Containers: Used 'docker network ls' to list available Docker networks. Then, used 'docker network inspect <network_name>' to view details of a specific network and confirm that my containers are connected.
+
+The above steps are what I followed to have my Laravel real estate application Dockerized and ready to run smoothly on any machine with Docker! Feel free to adapt these steps to your specific.
