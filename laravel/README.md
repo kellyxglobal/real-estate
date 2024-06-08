@@ -154,3 +154,73 @@ This stage involves designing the view for adding new properties, ensuring all r
 - Multiple Facility Support: To facilitate the addition of multiple facilities, a parent div element with hidden visibility is created. This element houses child div elements with class and ID attributes, enabling the addition and deletion of facilities within the form. Client-side validation of user input is implemented using a combination of HTML and JavaScript/Ajax scripting.
 
 - "Add More" Functionality: An "Add More" button is included to dynamically add new facility sections within the form. Each button utilizes specific class attributes (addeventmore and removeeventmore) to trigger the corresponding JavaScript functions.
+
+
+## Image Intervention Integration:
+This section describes the integration of an image intervention package for advanced image manipulation tasks within the application. This package simplifies tasks like resizing, cropping, rotating, and watermarking images.
+
+- Setup: The image intervention package was installed following the official documentation.
+
+- Image Upload and Processing:
+- - A route named StoreProperty was created based on the action attribute of the Add_Property form.
+- - Inside the corresponding controller function, the uploaded image file is retrieved and stored in a variable.
+- - The file extension is extracted and combined with a unique identifier generated programmatically.
+- - The image resize function from the image intervention package is used to resize the image to desired dimensions and then save it to a designated directory.
+
+
+## Database Insertion
+This section details the process of inserting property data into the database.
+
+- View Form: The submit property form was designed with specific attributes for capturing details like image thumbnail, multiple property images, property type, and selected amenities.
+- - Arrays were used in the name attribute for amenity checkboxes to collect user selections.
+
+- Eloquent ORM and Data Collection:
+- - The Eloquent ORM was utilized within the controller function to efficiently target the selected amenity IDs.
+- - The implode function in PHP is used to convert the selected amenity IDs into a comma-separated string for storage in the database table.
+
+- Unique Property Code Generation:
+- - The haruncpi/laravel-id-generator package was installed using composer require haruncpi/laravel-id-generator.
+- - The IdGenerator class is included to facilitate the generation of unique property codes.
+
+- Multiple Image Handling:
+- - The controller method was extended to handle the insertion of multiple property images.
+
+- Facility Attributes:
+- - The insertion of facility attributes is also handled within the same controller method.
+
+
+## Proper-Property Type Relationship:
+This section outlines the implementation of the relationship between properties and their corresponding types.
+
+- Edit Functionality:
+- - The edit functionality allows users to click on a property's edit button, triggering a request to a specific web route.
+- - This route utilizes a controller function to fetch all relevant property data and display it on the edit page.
+
+
+## Property Status and Types Update:
+This section describes the logic behind updating property status and property type information.
+
+- Status Display:
+- - The application displays "For Rent" when the property_status is "rent" and "For Buy" when it's "buy".
+
+- Property Type Display:
+- - The property name is displayed based on a match between the propertytype Id and the property Id.
+
+- Amenity Display:
+If all selected amenity IDs are present in the amenities array, their corresponding names are displayed.
+
+- Agent Display:
+- - If the property agent id matches the agent ID associated with the property, the agent's name is displayed.
+
+- Featured and Hot Property Flags:
+- - A checkbox is displayed for "featured" and "hot" properties based on the corresponding flag values ("1" for checked, otherwise unchecked).
+
+
+
+## Updating Property Thumbnail:
+This section explains the implementation of a separate form for updating the property thumbnail on the edit page.
+
+- Dedicated Form:
+A separate form is created on the edit_property page to handle thumbnail updates.
+- Route and Function:
+A specific route is defined for the form submission, and a controller function is implemented to handle the update logic for the submitted image file in the database.
